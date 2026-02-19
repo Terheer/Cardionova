@@ -1,14 +1,42 @@
+'use client';
+
 import Link from 'next/link';
 import { Heart } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
 
 const Navbar = () => {
-  return (
-    <div className="fixed top-0 left-0 w-full z-50 group pointer-events-none">
-      {/* Trigger area - 20px height for easier access */}
-      <div className="h-6 w-full absolute top-0 left-0 hover:bg-transparent pointer-events-auto"></div>
+  const [visible, setVisible] = useState(true);
+  const scrollTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-      {/* Navbar Content */}
-      <nav className="bg-white/95 backdrop-blur-md shadow-md py-4 transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out pointer-events-auto">
+  useEffect(() => {
+    const handleScroll = () => {
+      // Hide navbar while scrolling
+      setVisible(false);
+
+      // Clear any existing timer
+      if (scrollTimerRef.current) {
+        clearTimeout(scrollTimerRef.current);
+      }
+
+      // Show navbar again after scrolling stops (500ms debounce)
+      scrollTimerRef.current = setTimeout(() => {
+        setVisible(true);
+      }, 500);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (scrollTimerRef.current) clearTimeout(scrollTimerRef.current);
+    };
+  }, []);
+
+  return (
+    <div
+      className={`fixed top-0 left-0 w-full z-50 transition-transform duration-300 ease-in-out ${visible ? 'translate-y-0' : '-translate-y-full'
+        }`}
+    >
+      <nav className="bg-white/95 backdrop-blur-md shadow-md py-4">
         <div className="container mx-auto px-6 flex justify-between items-center">
           <Link href="/" className="flex items-center gap-2 text-2xl font-bold text-[var(--primary-red)]">
             <Heart className="w-8 h-8 fill-current" />
