@@ -6,7 +6,7 @@ import { GiHeartOrgan } from 'react-icons/gi';
 
 const Hero = () => {
     return (
-        <section className="relative py-20 lg:py-32 overflow-hidden h-screen flex items-center bg-gradient-to-br from-red-50 via-white to-red-50">
+        <section className="relative py-16 lg:py-32 overflow-hidden min-h-screen flex items-center bg-gradient-to-br from-red-50 via-white to-red-50">
             {/* Animated Red Gradient Blob */}
             <motion.div
                 animate={{
@@ -67,12 +67,12 @@ const Hero = () => {
                 </svg>
             </div>
 
-            <div className="container mx-auto px-6 text-center z-10 relative">
+            <div className="container mx-auto px-4 sm:px-6 text-center z-10 relative">
                 <motion.h1
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="text-6xl lg:text-9xl font-black text-black leading-tight mb-8 tracking-tighter"
+                    className="text-5xl sm:text-7xl lg:text-9xl font-black text-black leading-none mb-6 tracking-tighter"
                 >
                     CARDIO<span className="text-[var(--primary-red)]">NOVA</span>
                 </motion.h1>
@@ -81,7 +81,7 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                    className="text-2xl font-light text-black mb-12 max-w-2xl mx-auto tracking-wide"
+                    className="text-lg sm:text-2xl font-light text-black mb-8 sm:mb-12 max-w-2xl mx-auto tracking-wide"
                 >
                     ADVANCED CARDIOLOGY. <br />
                     <span className="text-gray-500">PURE & PERSONAL.</span>
@@ -91,17 +91,17 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-                    className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+                    className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center w-full sm:w-auto"
                 >
                     <Link
                         href="/appointments"
-                        className="bg-[var(--primary-red)] text-white px-10 py-5 rounded-full font-bold text-xl hover:bg-black transition duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 transform"
+                        className="w-full sm:w-auto text-center bg-[var(--primary-red)] text-white px-8 py-4 sm:px-10 sm:py-5 rounded-full font-bold text-base sm:text-xl hover:bg-black transition duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 transform"
                     >
                         BOOK APPOINTMENT
                     </Link>
                     <Link
                         href="/about"
-                        className="bg-transparent text-black border-2 border-black px-10 py-5 rounded-full font-bold text-xl hover:bg-black hover:text-white transition duration-300"
+                        className="w-full sm:w-auto text-center bg-transparent text-black border-2 border-black px-8 py-4 sm:px-10 sm:py-5 rounded-full font-bold text-base sm:text-xl hover:bg-black hover:text-white transition duration-300"
                     >
                         LEARN MORE
                     </Link>

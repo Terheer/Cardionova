@@ -49,7 +49,7 @@ const ExpertsSection = () => {
             {/* Subtle background decoration */}
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-red-50 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 opacity-60 z-0" />
 
-            <div className="container mx-auto px-6 relative z-10">
+            <div className="container mx-auto px-4 sm:px-6 relative z-10">
                 {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -82,7 +82,7 @@ const ExpertsSection = () => {
                             className="group bg-white rounded-2xl border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
                         >
                             {/* Photo */}
-                            <div className="relative h-64 w-full overflow-hidden">
+                            <div className="relative h-52 sm:h-64 w-full overflow-hidden">
                                 <Image
                                     src={expert.image}
                                     alt={`Photo of ${expert.name}`}
@@ -116,8 +116,8 @@ const ExpertsSection = () => {
 
                                 <p className="mt-4 text-gray-400 text-xs leading-relaxed font-light">{expert.bio}</p>
 
-                                {/* Action icons */}
-                                <div className="mt-5 flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                {/* Action icons — always visible on mobile, hover-only on desktop */}
+                                <div className="mt-5 flex gap-3 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300">
                                     <a
                                         href="#"
                                         className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 hover:bg-[var(--primary-red)] hover:text-white text-gray-500 transition-colors duration-200"

@@ -31,8 +31,8 @@ const ServicesSection = () => {
             {/* Decorative subtle circle */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-red-50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 opacity-50 z-0"></div>
 
-            <div className="container mx-auto px-6 relative z-10">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 border-t border-black pt-12">
+            <div className="container mx-auto px-4 sm:px-6 relative z-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 border-t border-black pt-12">
                     {services.map((service, index) => (
                         <motion.div
                             key={index}

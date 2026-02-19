@@ -14,8 +14,8 @@ const StatsSection = () => {
     ];
 
     return (
-        <section className="py-20 bg-black text-white" ref={ref}>
-            <div className="container mx-auto px-6">
+        <section className="py-16 sm:py-20 bg-black text-white" ref={ref}>
+            <div className="container mx-auto px-4 sm:px-6">
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
                     {stats.map((stat, index) => (
                         <div key={index} className="flex flex-col items-center">
@@ -23,7 +23,7 @@ const StatsSection = () => {
                                 initial={{ opacity: 0, scale: 0.5 }}
                                 animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
                                 transition={{ duration: 0.5, delay: index * 0.1, type: "spring", stiffness: 100 }}
-                                className="text-4xl lg:text-6xl font-bold text-[var(--primary-red)] mb-2"
+                                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--primary-red)] mb-2"
                             >
                                 {stat.value}
                             </motion.span>
