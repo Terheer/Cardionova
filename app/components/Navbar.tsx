@@ -1,8 +1,40 @@
 'use client';
 
 import Link from 'next/link';
-import { Heart, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
+
+// Anatomical heart logo mark
+const HeartLogo = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 48 48"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+    aria-hidden="true"
+  >
+    <path
+      d="M24 10 C22 8 18 6 14 7 C8 9 5 15 6 21 C7 28 13 33 18 37 L24 42 L30 37 C35 33 41 28 42 21 C43 15 40 9 34 7 C30 6 26 8 24 10Z"
+      fill="currentColor"
+      opacity="0.18"
+    />
+    <path
+      d="M24 10 C22 8 18 6 14 7 C8 9 5 15 6 21 C7 28 13 33 18 37 L24 42 L30 37 C35 33 41 28 42 21 C43 15 40 9 34 7 C30 6 26 8 24 10Z"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinejoin="round"
+      fill="none"
+    />
+    <path
+      d="M9 22 L14 22 L17 15 L21 29 L24 18 L27 25 L30 22 L39 22"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="none"
+    />
+  </svg>
+);
 import { usePathname } from 'next/navigation';
 
 const navLinks = [
@@ -56,7 +88,7 @@ const Navbar = () => {
             className="flex items-center gap-2 text-xl font-bold text-[var(--primary-red)]"
             onClick={() => setMobileOpen(false)}
           >
-            <Heart className="w-7 h-7 fill-current" />
+            <HeartLogo className="w-8 h-8 text-[var(--primary-red)]" />
             <span>CardioNova</span>
           </Link>
 
@@ -103,8 +135,8 @@ const Navbar = () => {
                 key={link.href}
                 href={link.href}
                 className={`py-3 px-4 rounded-xl font-medium text-base transition ${pathname === link.href
-                    ? 'bg-[var(--secondary-red)] text-[var(--primary-red)] font-semibold'
-                    : 'text-black hover:bg-gray-50 hover:text-[var(--primary-red)]'
+                  ? 'bg-[var(--secondary-red)] text-[var(--primary-red)] font-semibold'
+                  : 'text-black hover:bg-gray-50 hover:text-[var(--primary-red)]'
                   }`}
                 onClick={() => setMobileOpen(false)}
               >
